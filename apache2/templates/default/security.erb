@@ -23,7 +23,7 @@
 # Set to one of:  Full | OS | Minimal | Minor | Major | Prod
 # where Full conveys the most information, and Prod the least.
 #
-ServerTokens <%= node[:apache][:servertokens] %> 
+ServerTokens <%= node[:apache][:servertokens] %>
 
 #
 # Optionally add a line containing the server version and virtual host
@@ -33,7 +33,7 @@ ServerTokens <%= node[:apache][:servertokens] %>
 # Set to "EMail" to also include a mailto: link to the ServerAdmin.
 # Set to one of:  On | Off | EMail
 #
-ServerSignature <%= node[:apache][:serversignature] %> 
+ServerSignature <%= node[:apache][:serversignature] %>
 
 #
 # Allow TRACE method
@@ -49,5 +49,8 @@ TraceEnable <%= node[:apache][:traceenable] %>
 <IfModule mod_headers.c>
   Header unset X-Runtime
   Header unset X-Powered-By
+  Header always append X-Frame-Options SAMEORIGIN
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Content-Type-Options nosniff
 </IfModule>
 <% end %>
