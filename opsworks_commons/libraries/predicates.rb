@@ -1,5 +1,6 @@
 def infrastructure_class?(other)
-  node[:opsworks][:instance][:infrastructure_class] == other
+  # node[:opsworks][:instance][:infrastructure_class] == other
+  node[:opsworks][:instance][:architecture] == other
 end
 
 def rhel6?
