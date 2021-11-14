@@ -17,7 +17,7 @@ class Chef
       # options with an explicit gem_binary will result in undefined behavior.
       
      # def options(opts={:opts => "--no-ri --no-rdoc"})
-       def options(opts={:opts => ""})
+       def options(opts)
         set_or_return(:options,opts,:kind_of => [String,Hash])
       end
     end
