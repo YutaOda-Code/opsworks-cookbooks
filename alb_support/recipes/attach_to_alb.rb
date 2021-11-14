@@ -17,6 +17,7 @@
 #
 chef_gem "aws-sdk-core" do
   version "~> 2.6"
+  options ""
   action :install
 end
 
