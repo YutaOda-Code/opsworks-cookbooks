@@ -1,6 +1,5 @@
 def infrastructure_class?(other)
-  return false if node[:opsworks][:instance].nil?
-  node[:opsworks][:instance][:infrastructure_class] == other 
+  node[:opsworks][:instance][:infrastructure_class] == other
 end
 
 def rhel6?
